@@ -1,0 +1,11 @@
+
+
+<% if @post.errors.any? %>
+    <h2>Tu post no se creó tiene</h2><%= pluralize(@post.errors.count, "errores")%>
+    <% @post.errors.full_messages.each do |m| %>
+        <%= m %>
+    <% end %>
+    <%= link_to 'Intentalo denuevo', posts_dashboard_path %>
+<% else %>
+    <%= link_to 'Vamos al Inicio', root_path %>    
+<% end %>

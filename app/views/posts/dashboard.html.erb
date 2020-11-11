@@ -1,0 +1,15 @@
+
+    <%= form_with(model: Post.new, url: posts_create_path, local: true) do |f|%>
+        <%= f.label :title, "Ingrese un Título" %> <br>    
+        <%= f.text_field :title %>
+        <br>
+        <%= f.label :image_url, "Deja una imagen" %> <br>
+        <%= f.text_field :image_url %>
+        <br>
+        <%= f.label :content, "Rellena" %> <br>
+        <%= f.text_area :content %>
+        <br>
+        <%= f.submit %>
+     <% end %>
+
+    <h4>la palabra censurada es "auto"<h4>

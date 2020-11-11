@@ -1,0 +1,31 @@
+    <h1>POSTS</h1>
+
+        <%= form_tag root_path, method: :get do %>
+            <%= text_field_tag :q %>
+            <%= submit_tag 'buscar' %>
+        <% end %>
+
+    <br>
+
+    <table class = "table">
+        <thead>
+            <tr>
+                <th scope = "col">Título</th>
+                <th scope = "col">Fecha</th>
+                <th scope = "col">Imagen</th>
+                <th scope = "col">Contenido</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @posts.each do |post| %>
+            <tr>
+                <td><%= post.title %></td>
+                <td><%= post.created_at.strftime("%F") %></td>
+                <td><%= post.image_url %></td>
+                <td><%= post.content %></td>
+                <% end %>
+            </tr>
+        </tbody>
+    </table>
+
+    <%= link_to 'Crea un post', posts_dashboard_path %>
